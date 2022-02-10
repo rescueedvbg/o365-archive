@@ -11,7 +11,10 @@ with open('config.json','r') as f: appCfg = json.load(f, object_hook=lambda d:Si
 archiveBasePath = os.path.join(os.getcwd(),'archive')
 if not os.path.exists(archiveBasePath):
     os.makedirs(archiveBasePath)
-
+    
+#######################################################################
+#   Azure AD Application requires full_access_as_app API permission   #
+#######################################################################
 creds = OAuth2Credentials(
     client_id=appCfg.config.App.Id,
     client_secret=appCfg.config.App.Secret,
@@ -33,7 +36,7 @@ account = Account(
     access_type=IMPERSONATION
     )
 
-for item in account.inbox.all()[:10]:
+for item in account.inbox.all():
 
     cleanId = (item.id).replace("<","")
     cleanId = cleanId.replace(">","")
