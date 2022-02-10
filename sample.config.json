@@ -1,0 +1,10 @@
+{
+	"config": {
+		"Ms365TenantId": "<TENANT ID GOES HERE>",
+		"MbxUpn": "<UPN GOES HERE>",
+		"App": {
+			"Id": "<APP ID GOES HERE>",
+			"Secret": "<APP SECRET GOES HERE>"
+		}
+	}
+}
